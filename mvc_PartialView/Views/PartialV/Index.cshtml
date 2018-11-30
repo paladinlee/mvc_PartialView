@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<div id="now"></div>
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+<script>
+    $(function () {
+        $.get("/PartialV/GetTime", null, function (data) {
+            console.log(data);
+            $("#now").html(data);
+        });
+    });
+</script>
